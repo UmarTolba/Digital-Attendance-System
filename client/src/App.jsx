@@ -1,7 +1,7 @@
 
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
-
+import './Login.css';
 // IMPORT EL COMPONENT BETA3AK HNA EL AWL
 import Login from './Login.jsx';
 import AhlaComponent from './assets/components/AhlaComponent';

@@ -8,6 +8,7 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
     };
+    // function Navbar() { <--- add navbar here ya basha
     return (
         <div className="login-container">
             <h2>Login</h2>

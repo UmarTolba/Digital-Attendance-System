@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   width: 100%;
-  background: #ffffff; /* solid white navbar */
-  color: #072542; /* dark text for contrast */
+  background: #ffffff;
+  color: #072542;
   padding: 0.6rem 0.5rem;
   box-shadow: 0 1px 8px rgba(16, 31, 47, 0.06);
   z-index: 1000;
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem; /* keeps logo closer to left inside centered inner */
+  padding: 0 1rem;
 }
 
 .nav-left {
@@ -28,11 +28,11 @@
 }
 
 .nav-logo {
-  width: 56px; /* larger logo */
-  height: 56px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   display: block;
-  margin-left: -8px; /* nudge more to the left visually */
+  margin-left: -8px;
 }
 
 .nav-brand {
@@ -72,7 +72,6 @@
   }
 }
 
-/* supply a root variable for nav height so page content can reserve space */
 :root {
   --nav-height: 72px;
 }

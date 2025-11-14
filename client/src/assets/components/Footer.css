@@ -61,7 +61,6 @@
   }
 }
 
-/* reserve space for the fixed footer */
 :root {
   --footer-height: 56px;
 }

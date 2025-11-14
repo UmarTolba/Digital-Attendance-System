@@ -1,11 +1,31 @@
-import React from "react";
+import React, { use } from "react";
+import { useState, useEffect } from "react";
 
-const sessions = [
-  { day: "Monday", time: "10:00 - 11:30 AM", room: "Room 301, Engineering Building" },
-  { day: "Wednesday", time: "10:00 - 11:30 AM", room: "Room 206, Computing Building" }
-];
+// const sessions = [
+//   { day: "Monday", time: "10:00 - 11:30 AM", room: "Room 301, Engineering Building" },
+//   { day: "Wednesday", time: "10:00 - 11:30 AM", room: "Room 206, Computing Building" }
+// ];
+
+
 
 function SessionSlots() {  // <-- Capitalized
+  
+  const [sessions, setSessions] = useState([]);
+  useEffect(()=>{
+    const fetchSessions = async () =>{
+      try {
+        const response = await fetch("http://localhost:3000/api/session");
+        const sessions = await response.json();
+        setSessions(sessions);
+      } catch (error) {
+        console.log("Error fetching sessions");
+      }
+    };
+  
+    fetchSessions();
+  }, []);
+
+
   return (
     <div className="session-slots">
       <h2>Lecture Schedule</h2>
@@ -13,8 +33,9 @@ function SessionSlots() {  // <-- Capitalized
         <div className="slot" key={index}>
           <div className="slot-icon">📅</div>
           <div className="slot-info">
-            <div className="time">{session.day}, {session.time}</div>
-            <div className="location">{session.room}</div>
+          
+            <div className="time">{session.name}</div>
+            <div className="location">Date:{session.day}-{session.month}-2025 {session.semester}</div>
           </div>
         </div>
       ))}
@@ -59,6 +80,7 @@ function SessionSlots() {  // <-- Capitalized
 
         .slot-info .time {
           font-weight: bold;
+          color:darkblue;
           margin-bottom: 3px;
         }
 

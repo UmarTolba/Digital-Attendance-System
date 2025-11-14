@@ -5,7 +5,7 @@ const sessions = [
   { day: "Wednesday", time: "10:00 - 11:30 AM", room: "Room 206, Computing Building" }
 ];
 
-function SessionSlots() {  // <-- Capitalized
+function SessionSlots() {  
   return (
     <div className="session-slots">
       <h2>Lecture Schedule</h2>
@@ -71,4 +71,4 @@ function SessionSlots() {  // <-- Capitalized
   );
 }
 
-export default SessionSlots; // <-- Capitalized
+export default SessionSlots;

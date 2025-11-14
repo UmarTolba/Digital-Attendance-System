@@ -1,7 +1,12 @@
 const User = require("../models/userModel");
 
-const getUsers = async (req, res) => {
+const getAllUsers = async (req, res) => {
   const users = await User.find();
+  res.json(users);
+};
+
+const getUser = async (req, res) => {
+  const users = await User.findOne(req.params.id);
   res.json(users);
 };
 
@@ -20,4 +25,4 @@ const deleteUser = async (req, res) => {
   res.json({ message: "User deleted" });
 };
 
-module.exports = { getUsers, createUser, updateUser, deleteUser };
+module.exports = { getAllUsers, getUser, createUser, updateUser, deleteUser };

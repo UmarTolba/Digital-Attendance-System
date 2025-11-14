@@ -7,13 +7,20 @@ const connectDB = require("./config/DatabaseConncection");
 dotenv.config();
 connectDB();
 
+const sessionRoutes = require("./routes/SessionRouter");
 const userRoutes = require("./routes/UserRouter");
 
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/api/users", userRoutes);
+
+
+app.use("/api/user", userRoutes);
+app.use("/api/session", sessionRoutes);
+
 
 app.get('/', (req, res) => {
-  res.send('the Current available routers are: /user');
+  res.send('the Current available routes are: \n/user\n/session');
 });
 
 app.listen(PORT, () => {

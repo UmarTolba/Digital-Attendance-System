@@ -1,17 +1,19 @@
+import React from "react";
+
 function Sidebar({MainComponent}){
-return (
-<>
-    <div className="sidebar-tab">
-<MainComponent Name="Profile"/>
-<MainComponent Name="Class List"/>
-<MainComponent Name="Session Slot"/>
-<MainComponent Name="Overall Attendence"/>
-<MainComponent Name="Daily Attendance"/>
-<MainComponent Name="Settings"/>
-<MainComponent Name="Logout"/>
-    </div>
-</>
- );
+    return (
+
+        <div className="sidebar-tab">
+            Salam
+            <MainComponent Name="Profile"/>
+            <MainComponent Name="Class List"/>
+            <MainComponent Name="Session Slot"/>
+            <MainComponent Name="Overall Attendence"/>
+            <MainComponent Name="Daily Attendance"/>
+            <MainComponent Name="Settings"/>
+            <MainComponent Name="Logout"/>
+        </div>
+    );
 }
 
 function MainComponent({Name}){
@@ -27,4 +29,4 @@ return (
 );
 }
 export default Sidebar;
-export {MainComponent};
+// export {MainComponent};

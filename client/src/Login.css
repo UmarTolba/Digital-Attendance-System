@@ -2,24 +2,38 @@
     width: 300px;
     margin: 100px auto;
     padding: 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #5d70d9;
+    background-color: #405dff;
     h2 {
       text-align: center;
       color: white;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 }
-input[type="email"],
-input[type="password"] {
+
+input{
   background-color: #e3e3fe; 
   color: black;              
   border: 1px solid #666;   
   border-radius: 4px;
-  padding: 8px;
   width: 100%;
   box-sizing: border-box;
   margin-top: 4px;
   
+}
+
+button{
+  margin: auto;
+  background-color: white;
+  padding: 5px;
+  padding-inline: 20px;
+  margin-top: 20px;
 }

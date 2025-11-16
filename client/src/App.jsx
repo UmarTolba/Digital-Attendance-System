@@ -7,8 +7,7 @@ import ProfessorComponent from './assets/components/ProfessorPage/ProfessorCompo
 import Sidebar from './assets/components/Sidebar';
 import Welcome from './assets/components/welcome';
 
-import Login from './Login.jsx';
-import AhlaComponent from './assets/components/AhlaComponent';
+import Login from './assets/components/Login.jsx';
 
 function App() {
 
@@ -20,7 +19,7 @@ function App() {
         <Route path="/SessionSlots" element={<SessionSlots />} />
         <Route path="/Professor" element={<ProfessorComponent />} />
         <Route path="/SideBar" element={<Sidebar />} />
-        <Route path="/welcome" element={<Welcome />} />
+        <Route path="" element={<Welcome />} />
 
         <Route path="/login" element={<Login/>} />
       </Routes>

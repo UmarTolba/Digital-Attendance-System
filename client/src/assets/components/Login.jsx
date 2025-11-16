@@ -1,18 +1,44 @@
 import { useState } from "react";
-import "./Login.css";
-
+import "../../Login.css";
+import axios from "axios";
+import { useAuth } from "../../AuthContext";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
     const [email, setEmail] = useState("");
+    let [message, setMessage] = useState("");
     const [password, setPassword] = useState("");
-    
-    const handleSubmit = (e) => {
+    const { user, login } = useAuth();
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    };
-    // function Navbar() { <--- add navbar here ya basha
+    
+        try {
+          const response = await axios.post('http://localhost:3000/api/user/login', {
+            email,
+            password,
+          });
+    
+          const userData = response.data;
+          login(userData);
+          console.log('Login successful!', userData);
+          setMessage("");
+          navigate("/Professor");
+          
+        } catch (err) {
+          const errorMessage = err.response?.data?.message || 'Login failed. Please try again.';
+          console.log(err);
+          setMessage("Incorrect credentials");
+        }
+      };
+
+     
     return (
         <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
+                {message == "" ? (null)
+                :(<h3 className="m-auto p-3 bg-red-600 text-white rounded-md font-bold">{message}</h3>)}
+                
                 <div>
                     <label>Email:</label>
                     <input

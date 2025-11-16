@@ -6,8 +6,20 @@ const getAllUsers = async (req, res) => {
 };
 
 const getUser = async (req, res) => {
-  const users = await User.findOne(req.params.id);
-  res.json(users);
+  const user = await User.findOne(req.params.email);
+  res.json(user);
+};
+
+const login = async (req, res) => {
+  const user = await User.findOne({email:req.body.email, password: req.body.password});
+  if(user != null)
+  {
+    res.json(user);
+  }
+  else
+  {
+    res.status(404).json({"message": "User Not Found"});
+  }
 };
 
 const createUser = async (req, res) => {
@@ -25,4 +37,4 @@ const deleteUser = async (req, res) => {
   res.json({ message: "User deleted" });
 };
 
-module.exports = { getAllUsers, getUser, createUser, updateUser, deleteUser };
+module.exports = { getAllUsers, getUser, createUser, updateUser, deleteUser, login };

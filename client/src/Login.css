@@ -1,0 +1,25 @@
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #5d70d9;
+    h2 {
+      text-align: center;
+      color: white;
+    }
+}
+input[type="email"],
+input[type="password"] {
+  background-color: #e3e3fe; 
+  color: black;              
+  border: 1px solid #666;   
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+  
+}

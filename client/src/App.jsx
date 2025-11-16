@@ -1,12 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
-
+import './Login.css';
 // IMPORT EL COMPONENT BETA3AK HNA EL AWL
 import SessionSlots from './assets/components/SessionSlots';
 import ProfessorComponent from './assets/components/ProfessorPage/ProfessorComponent';
 import Sidebar from './assets/components/Sidebar';
 import Welcome from './assets/components/welcome';
 
+import Login from './Login.jsx';
+import AhlaComponent from './assets/components/AhlaComponent';
 
 function App() {
 
@@ -20,7 +22,7 @@ function App() {
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="/welcome" element={<Welcome />} />
 
-
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </>
   )

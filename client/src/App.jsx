@@ -5,6 +5,9 @@ import './App.css'
 import SessionSlots from './assets/components/SessionSlots';
 import ProfessorComponent from './assets/components/ProfessorPage/ProfessorComponent';
 import Sidebar from './assets/components/Sidebar';
+import Welcome from './assets/components/welcome';
+
+
 function App() {
 
   return (
@@ -15,6 +18,9 @@ function App() {
         <Route path="/SessionSlots" element={<SessionSlots />} />
         <Route path="/Professor" element={<ProfessorComponent />} />
         <Route path="/SideBar" element={<Sidebar />} />
+        <Route path="/welcome" element={<Welcome />} />
+
+
       </Routes>
     </>
   )

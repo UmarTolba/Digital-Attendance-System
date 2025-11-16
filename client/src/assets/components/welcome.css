@@ -1,0 +1,14 @@
+#welcome-message {
+    position: relative;
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page-content {
+    padding-top: var(--nav-height, 72px);
+    padding-bottom: var(--footer-height, 56px);
+    display: block;
+}

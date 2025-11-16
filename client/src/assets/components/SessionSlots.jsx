@@ -8,9 +8,6 @@ import { useState, useEffect } from "react";
 
 
 
-<<<<<<< HEAD
-function SessionSlots() {  
-=======
 function SessionSlots() {  // <-- Capitalized
   
   const [sessions, setSessions] = useState([]);
@@ -29,7 +26,6 @@ function SessionSlots() {  // <-- Capitalized
   }, []);
 
 
->>>>>>> Dynamic-Sessions-Slots
   return (
     <div className="session-slots">
       <h2>Lecture Schedule</h2>

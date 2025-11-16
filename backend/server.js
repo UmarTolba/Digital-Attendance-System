@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const cors = require('cors');
 const PORT = 3000;
 const dotenv = require("dotenv");
 const connectDB = require("./config/DatabaseConncection");
@@ -13,7 +13,7 @@ const userRoutes = require("./routes/UserRouter");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors());
 
 app.use("/api/user", userRoutes);
 app.use("/api/session", sessionRoutes);

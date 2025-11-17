@@ -8,8 +8,14 @@ import Sidebar from './assets/components/Sidebar';
 import Welcome from './assets/components/welcome';
 
 import Login from './assets/components/Login.jsx';
+import StudentList from './assets/components/StudentList';
 
 function App() {
+  const students = [
+        { id: 1, name: "Alice Johnson", attendanceStatus: "Present" },
+        { id: 2, name: "Bob Smith", attendanceStatus: "Absent" },
+        { id: 3, name: "Charlie Brown", attendanceStatus: "Present" }
+    ];
 
   return (
     <>
@@ -21,10 +27,13 @@ function App() {
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />
 
-        <Route path="/login" element={<Login/>} />
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/StudentList" element={<StudentList students={students} />} />
+
       </Routes>
     </>
-  )
+  );
 }
+
 
 export default App

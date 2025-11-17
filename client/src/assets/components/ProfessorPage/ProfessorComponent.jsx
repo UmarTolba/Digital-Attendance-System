@@ -9,7 +9,8 @@ function ProfessorComponent()
     const navigate = useNavigate();
     if(!user)
     {
-        navigate("/login");
+        console.log("User not logged in");
+        window.location.assign("/Login");
     }
     return(
         <div className="flex flex-column h-full">

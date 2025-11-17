@@ -28,7 +28,7 @@ function SessionSlots() {  // <-- Capitalized
 
   return (
     <div className="session-slots">
-      <h2>Lecture Schedule</h2>
+      <h2 className="text-blue-800 font-bold ">Lecture Schedule</h2>
       {sessions.map((session, index) => (
         <div className="slot" key={index}>
           <div className="slot-icon">📅</div>
@@ -44,11 +44,6 @@ function SessionSlots() {  // <-- Capitalized
           font-family: Arial, sans-serif;
           max-width: 400px;
           margin: 20px auto;
-        }
-
-        .session-slots h2 {
-          font-size: 1.2em;
-          margin-bottom: 10px;
         }
 
         .slot {

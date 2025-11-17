@@ -15,7 +15,10 @@ function ProfessorComponent()
         <div className="flex flex-column h-full">
             
             <NewSideBar></NewSideBar>
-            <SessionSlots></SessionSlots>
+            <div className="w-full h-full p-5">
+                <h1 className="text-blue-800 font-bold text-4xl">Dashboard</h1>
+                <SessionSlots></SessionSlots>
+            </div>
             
         </div>
     );

@@ -1,7 +1,8 @@
 import React from "react";
-import SessionSlots from "../SessionSlots";
-import NewSideBar from "../NewSideBar";
-import { useAuth } from "../../../AuthContext";
+import SessionSlots from "../components/SessionSlots";
+import NewSideBar from "../components/NewSideBar";
+import StudentList from "../components/StudentList";
+import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 function ProfessorComponent()
 {
@@ -18,7 +19,13 @@ function ProfessorComponent()
             <NewSideBar></NewSideBar>
             <div className="w-full h-full p-5">
                 <h1 className="text-blue-800 font-bold text-4xl">Dashboard</h1>
-                <SessionSlots></SessionSlots>
+                <div className="flex flex-row justify-center h-[90%] items-center mt-9">
+                    <SessionSlots></SessionSlots>
+
+                    <div className="w-[68%] h-full border-solid border-[1px] border-[#5e97ff] rounded-[20px] mt-0 p-5">
+                        <StudentList cla></StudentList>
+                    </div>
+                </div>
             </div>
             
         </div>

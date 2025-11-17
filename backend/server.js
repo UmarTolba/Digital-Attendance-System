@@ -9,7 +9,7 @@ connectDB();
 
 const sessionRoutes = require("./routes/SessionRouter");
 const userRoutes = require("./routes/UserRouter");
-
+const attendanceRoutes = require("./routes/AttendanceRouter");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,10 +18,11 @@ app.use(cors());
 
 app.use("/api/user", userRoutes);
 app.use("/api/session", sessionRoutes);
+app.use("/api/attendance", attendanceRoutes);
 
 
 app.get('/', (req, res) => {
-  res.send('the Current available routes are: \n/user\n/session');
+  res.send('the Current available routes are: \n/user\n/session\n/attendance');
 });
 
 app.listen(PORT, () => {

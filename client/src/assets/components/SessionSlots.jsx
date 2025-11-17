@@ -28,13 +28,13 @@ function SessionSlots() {  // <-- Capitalized
 
   return (
     <div className="session-slots">
-      <h2 className="text-blue-800 font-bold ">Lecture Schedule</h2>
+      <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Lecture Schedule</h2>
       {sessions.map((session, index) => (
         <div className="slot" key={index}>
-          <div className="slot-icon">📅</div>
+          <div className="slot-icon"><i class="fa-solid fa-calendar"></i></div>
           <div className="slot-info">
           
-            <div className="time">{session.name}</div>
+            <div className="name">{session.name}</div>
             <div className="location">Date:{session.day}-{session.month}-2025 {session.semester}</div>
           </div>
         </div>
@@ -42,41 +42,53 @@ function SessionSlots() {  // <-- Capitalized
       <style jsx>{`
         .session-slots {
           font-family: Arial, sans-serif;
-          max-width: 400px;
-          margin: 20px auto;
+          width: 30%;
+          height:100%;
+          margin:auto;
+          margin-left:0;
+          padding: 15px;
+          border: 1px solid #5e97ff;
+          border-radius: 20px;
         }
 
         .slot {
           display: flex;
-          align-items: flex-start;
+          height:fit-content;
+          justify-content: center;
+          align-items: center;
           margin-bottom: 15px;
           padding: 10px;
-          border: 1px solid #ddd;
+          border: 1px solid #5e97ff;
           border-radius: 8px;
           background-color: #f9f9f9;
         }
 
         .slot-icon {
-          width: 30px;
-          height: 30px;
-          background-color: #e0e7ff;
+          width: 40px;
+          height: 40px;
+          aspect-ratio: 1/1;
+          background-color: #003596;
           border-radius: 6px;
+          color:white;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-right: 10px;
-          font-size: 16px;
+          padding: 10px;
+          font-size: 1.6rem;
         }
 
         .slot-info {
           display: flex;
+          margin:auto;
+          margin-left:0;
           flex-direction: column;
         }
 
-        .slot-info .time {
+        .slot-info .name {
+          font-size: 1.3rem;
           font-weight: bold;
           color:darkblue;
-          margin-bottom: 3px;
         }
 
         .slot-info .location {

@@ -1,6 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+const StudentList = () => {
 
-const StudentList = ({ students = [] }) => {
+    const [students, setStudents] = useState(); 
+
+    // setStudents([
+    //     { id: 1, name: "Alice Johnson", attendanceStatus: "Present" },
+    //     { id: 2, name: "Bob Smith", attendanceStatus: "Absent" },
+    //     { id: 3, name: "Charlie Brown", attendanceStatus: "Present" }
+    // ]);
+
+    useEffect(()=>{
+        const fetchStudents = async ()=>{
+            try {
+                const response = await fetch("http://localhost:3000/api/user");
+                const studentData = await response.json();
+                console.log(studentData);
+                setStudents(studentData);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchStudents();
+    }, []);
+    
     return (
         <>
             <style>{`
@@ -11,8 +35,6 @@ const StudentList = ({ students = [] }) => {
                     overflow: hidden;
                     box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
                     width: 100%;
-                    max-width: 720px;
-                    margin: auto;
                 }
 
                 .student-table {
@@ -87,7 +109,7 @@ const StudentList = ({ students = [] }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {students.map((student) => {
+                        {students && students.map((student) => {
                             const status = student.attendanceStatus.toLowerCase();
                             const statusClass =
                                 status === "present"

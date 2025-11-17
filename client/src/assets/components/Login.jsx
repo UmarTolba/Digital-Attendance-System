@@ -3,6 +3,8 @@ import "../../Login.css";
 import axios from "axios";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
 export default function Login() {
     const [email, setEmail] = useState("");
     let [message, setMessage] = useState("");
@@ -34,6 +36,7 @@ export default function Login() {
      
     return (
         <div className="login-container">
+          <NavBar />
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 {message == "" ? (null)
@@ -59,6 +62,7 @@ export default function Login() {
                 </div>
                 <button type="submit">Login</button>
             </form>
+            <Footer />
         </div>
     );
 }

@@ -1,8 +1,8 @@
 import React from "react";
-function DataBarDaily()
+function DataBarDaily({studentNumber, present})
 {
-    var registered_students = 50;
-     var present = 30;
+    var registered_students = studentNumber;
+     var present = present;
      var late = 10;
     var excused_absent = 5;
     var absent = 5;
@@ -18,10 +18,9 @@ function DataBarDaily()
         }
  return(
         <>
+            <h2 className="text-blue-900 m-auto flex justify-center items-center mt-5 font-bold text-2xl">{course_name}</h2>
         <div className="databar">
-              <div className="databar-title">Course Name:
-                <div className="databar-numbers">{course_name}</div>
-            </div>
+            
             <div className="databar-title">Registered students:
                 <div className="databar-numbers">{registered_students}</div>
             </div>
@@ -49,25 +48,26 @@ function DataBarDaily()
         </div>
     <style jsx>{`
            .databar {
+           width:100%;
         display: flex;
         justify-content: space-around;
-        background-color:  #cfcfcf;
+        background-color:  #0048ff76;
         padding: 20px;
-        border-radius: 8px;
-        border-color: black;
+        border-radius: 20px;
+        border-color: white;
         border-style: solid;
         border-width: 1px;
-        margin: 20px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        margin-top:20px;
     }
     .databar-title {
         font-size: 1.2em;
-        color: #333;
+        color: white;
         text-align: center;
+        font-weight: bold;
     }
     .databar-numbers {
         font-weight: bold;
-        color: #1513b8;
+        color: white;
         text-align: center;
     }
   `}</style>

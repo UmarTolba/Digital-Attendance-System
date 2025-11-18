@@ -24,7 +24,6 @@ const AttendanceSchema = new mongoose.Schema({
         type: Date
     },
 });
-
-AttendanceSchema.index({ session: 1 }, { unique: true });
+AttendanceSchema.index({ user: 1, session: 1 }, { unique: true });
 
 module.exports = mongoose.model('Attendance', AttendanceSchema);

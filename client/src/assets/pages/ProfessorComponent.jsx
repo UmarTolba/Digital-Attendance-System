@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SessionSlots from "../components/SessionSlots";
 import NewSideBar from "../components/NewSideBar";
 import StudentList from "../components/StudentList";
@@ -7,6 +7,8 @@ import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 function ProfessorComponent()
 {
+    const [studentNumber, setStudentNumber] = useState(10);
+    const [presentStudents, setPresent] = useState(0);
     const {user, logout} = useAuth();
     const navigate = useNavigate();
     if(!user)
@@ -25,8 +27,8 @@ function ProfessorComponent()
 
                     <div className="w-[68%] h-full border-solid border-[1px] border-[#5e97ff] rounded-[20px] mt-0 p-5">
                         <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Student List</h2>
-                        <StudentList cla></StudentList>
-                        <DataBarDaily></DataBarDaily>
+                        <StudentList studentNumber={setStudentNumber} presentNumber={setPresent}></StudentList>
+                        <DataBarDaily studentNumber={studentNumber} present={presentStudents}></DataBarDaily>
                     </div>
                 </div>
             </div>

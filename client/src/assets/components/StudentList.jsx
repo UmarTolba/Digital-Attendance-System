@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-const StudentList = () => {
+const StudentList = ({studentNumber, presentNumber}) => {
 
     const [students, setStudents] = useState(); 
+    let presentTotal = 0;
+    function setNumber(number)
+    {
+        studentNumber(number);
+    }
 
-    // setStudents([
-    //     { id: 1, name: "Alice Johnson", attendanceStatus: "Present" },
-    //     { id: 2, name: "Bob Smith", attendanceStatus: "Absent" },
-    //     { id: 3, name: "Charlie Brown", attendanceStatus: "Present" }
-    // ]);
+    function present(present) {
+        presentNumber(present);
+    }
 
     useEffect(()=>{
         const fetchStudents = async ()=>{
@@ -25,6 +28,15 @@ const StudentList = () => {
         fetchStudents();
     }, []);
     
+    if(students)
+    {
+        const registeredStudents = students.length;
+        const presentStudents = students.find(student => student.status == "present");
+        setNumber(registeredStudents);
+        console.log(presentStudents);
+        
+        present(presentStudents.length);
+    }
     return (
         <>
             <style>{`

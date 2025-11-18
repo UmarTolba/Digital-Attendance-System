@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-const StudentList = ({studentNumber, presentNumber}) => {
+const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, absentNumber}) => {
 
     const [students, setStudents] = useState(); 
     let presentTotal = 0;
-    function setNumber(number)
-    {
-        studentNumber(number);
-    }
-
-    function present(present) {
-        presentNumber(present);
-    }
-
+    
+    const setNumber = (number) => {studentNumber(number)};
+    const present = (present) => {presentNumber(present)};
+    const late = (late) => {lateNumber(late)};
+    const excused = (excused) => {excusedNumber(excused)};
+    const absent = (absent) => {absentNumber(absent)};
+    
     useEffect(()=>{
         const fetchStudents = async ()=>{
             try {
@@ -28,14 +26,18 @@ const StudentList = ({studentNumber, presentNumber}) => {
         fetchStudents();
     }, []);
     
-    if(students)
+    if(students != null && students.length > 0)
     {
         const registeredStudents = students.length;
-        const presentStudents = students.find(student => student.status == "present");
+        const presentStudents = students.filter(student => student.status == "present");
+        const lateStudents = students.filter(student => student.status == "late");
+        const excusedStudents = students.filter(student => student.status == "excused");
+        const absentStudents = students.filter(student => student.status == "absent");
         setNumber(registeredStudents);
-        console.log(presentStudents);
-        
         present(presentStudents.length);
+        late(lateStudents.length);
+        excused(excusedStudents.length);
+        absent(absentStudents.length);
     }
     return (
         <>
@@ -44,13 +46,15 @@ const StudentList = ({studentNumber, presentNumber}) => {
                     background: #ffffff;
                     border-radius: 16px;
                     padding: 0;
-                    overflow: hidden;
+                    overflow-y: scroll;
+                    max-height: 250px;
                     box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
                     width: 100%;
                 }
 
                 .student-table {
                     width: 100%;
+                    
                     border-collapse: separate;
                     border-spacing: 0;
                     font-family: 'Inter', Arial, sans-serif;
@@ -112,7 +116,7 @@ const StudentList = ({studentNumber, presentNumber}) => {
             `}</style>
 
             <div className="table-wrapper">
-                <table className="student-table">
+                <table className="student-table overflow-y-scroll max-h-[200px]">
                     <thead>
                         <tr>
                             <th>Email</th>

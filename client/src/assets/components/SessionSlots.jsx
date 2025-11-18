@@ -41,7 +41,9 @@ function SessionSlots() {  // <-- Capitalized
       ))}
       <style jsx>{`
         .session-slots {
-          font-family: Arial, sans-serif;
+          font-family: "Elms Sans", sans-serif;
+          font-optical-sizing: auto;
+          font-style: normal;
           width: 30%;
           height:100%;
           margin:auto;
@@ -60,7 +62,7 @@ function SessionSlots() {  // <-- Capitalized
           padding: 10px;
           border: 1px solid #5e97ff;
           border-radius: 8px;
-          background-color: #f9f9f9;
+          background: linear-gradient(90deg, #edf4ff, white);
         }
 
         .slot-icon {

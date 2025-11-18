@@ -3,8 +3,8 @@ import "../../Login.css";
 import axios from "axios";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 export default function Login() {
     const [email, setEmail] = useState("");
     let [message, setMessage] = useState("");

@@ -7,9 +7,8 @@ import ProfessorComponent from './assets/pages/ProfessorComponent';
 import Sidebar from './assets/components/Sidebar';
 import Welcome from './assets/components/welcome';
 import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
-import Login from './assets/components/Login.jsx';
+import Login from './assets/pages/Login';
 import StudentList from './assets/components/StudentList';
-
 function App() {
   
 
@@ -22,7 +21,8 @@ function App() {
         <Route path="/Professor" element={<ProfessorComponent />} />
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />
-        DdataBarDaily
+        {/* <Route path="/OverallAttendance" element={<StudentList />} /> */}
+        
         <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />

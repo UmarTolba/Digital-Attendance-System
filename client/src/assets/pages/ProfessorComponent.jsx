@@ -7,8 +7,13 @@ import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 function ProfessorComponent()
 {
-    const [studentNumber, setStudentNumber] = useState(10);
+    // 7abet Data
+    const [studentNumber, setStudentNumber] = useState(0);
     const [presentStudents, setPresent] = useState(0);
+    const [lateStudents, setLate] = useState(0);
+    const [excusedStudents, setExcused] = useState(0);
+    const [absentStudents, setAbsent] = useState(0);
+    
     const {user, logout} = useAuth();
     const navigate = useNavigate();
     if(!user)
@@ -27,8 +32,20 @@ function ProfessorComponent()
 
                     <div className="w-[68%] h-full border-solid border-[1px] border-[#5e97ff] rounded-[20px] mt-0 p-5">
                         <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Student List</h2>
-                        <StudentList studentNumber={setStudentNumber} presentNumber={setPresent}></StudentList>
-                        <DataBarDaily studentNumber={studentNumber} present={presentStudents}></DataBarDaily>
+                        <StudentList
+                         studentNumber={setStudentNumber} 
+                         presentNumber={setPresent}
+                         lateNumber={setLate}
+                         excusedNumber={setExcused}
+                         absentNumber={setAbsent}
+                         ></StudentList>
+                        <DataBarDaily 
+                        studentNumber={studentNumber} 
+                        present={presentStudents}
+                        lateNumber={lateStudents}
+                        excusedNumber={excusedStudents}
+                        absentNumber={absentStudents}
+                        ></DataBarDaily>
                     </div>
                 </div>
             </div>

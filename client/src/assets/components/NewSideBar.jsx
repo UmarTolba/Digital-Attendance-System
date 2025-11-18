@@ -11,7 +11,7 @@ function NewSideBar()
             <Link className="bg-blue-800 p-1 pl-3 rounded-md transition-all duration-200 text-lg text-white hover:bg-white hover:text-blue-900 m-1" to="/SessionSlots"><i className="fa-solid fa-list-ol mr-2"></i>Session Slot</Link>
             <Link className="bg-blue-800 p-1 pl-3 rounded-md transition-all duration-200 text-lg text-white hover:bg-white hover:text-blue-900 m-1" to="/OverallAttendance"><i className="fa-solid fa-list-check mr-2"></i>Overall Attendence</Link>
             <Link className="bg-blue-800 p-1 pl-3 rounded-md transition-all duration-200 text-lg text-white hover:bg-white hover:text-blue-900 m-1" to="/Home"><i className="fa-solid fa-gear mr-2"></i>Settings</Link>
-            <button onClick={()=>{logout()}} className="bg-red-400 p-1 rounded-md transition-all font-semibold duration-200 text-lg text-white hover:bg-white hover:text-red-900 m-1" to="/Logout"><i className="fa-solid fa-arrow-left mr-2"></i>Logout</button>
+            <button onClick={()=>{logout()}} className="w-[97%] bg-red-400 p-1 rounded-md transition-all font-semibold duration-200 text-lg text-white hover:bg-white hover:text-red-900 m-1" to="/Logout"><i className="fa-solid fa-arrow-left mr-2"></i>Logout</button>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-
+import { Link } from "react-router";
 function NavBar() {
   return (
     <header className="nav-container">
@@ -10,7 +10,7 @@ function NavBar() {
         </div>
 
         <div className="nav-right">
-          <button className="nav-btn">About Us</button>
+          <Link to="/" className="nav-btn">Homepage</Link>
           <button className="nav-btn">Login</button>
           <button className="nav-btn">Help</button>
         </div>

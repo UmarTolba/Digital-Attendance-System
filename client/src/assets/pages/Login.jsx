@@ -35,8 +35,9 @@ export default function Login() {
 
      
     return (
-        <div className="login-container">
+      <>
           <NavBar />
+        <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 {message == "" ? (null)
@@ -62,7 +63,8 @@ export default function Login() {
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <Footer />
         </div>
+            <Footer />
+            </>
     );
 }

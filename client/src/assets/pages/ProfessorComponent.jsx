@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SessionSlots from "../components/SessionSlots";
 import NewSideBar from "../components/NewSideBar";
 import StudentList from "../components/StudentList";
@@ -46,6 +47,9 @@ function ProfessorComponent()
                         excusedNumber={excusedStudents}
                         absentNumber={absentStudents}
                         ></DataBarDaily>
+
+                        <Link to="/QR" className="m-auto mt-8 rounded-lg border-2 border-b-blue-300 border-solid hover:text-blue-800 w-[40%] flex justify-center
+                        transition-all duration-100 hover:bg-white  font-semibold text-xl text-white items-center p-2 bg-blue-800"><i className="fa-solid fa-qrcode mr-3"></i> Generate QR Code</Link>
                     </div>
                 </div>
             </div>

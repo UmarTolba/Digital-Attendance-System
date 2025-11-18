@@ -6,7 +6,7 @@ function DataBarDaily({studentNumber, present, lateNumber, excusedNumber, absent
     var late = lateNumber;
     var excused_absent = excusedNumber;
     var absent = absentNumber;
-    var course_name = "Dynamic Web Development";
+    var course_name = "Intro to Computing";
 
     function Attendance_percentage()
     {

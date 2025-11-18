@@ -13,7 +13,7 @@ const StudentList = () => {
     useEffect(()=>{
         const fetchStudents = async ()=>{
             try {
-                const response = await fetch("http://localhost:3000/api/user");
+                const response = await fetch("http://localhost:3000/api/attendance");
                 const studentData = await response.json();
                 console.log(studentData);
                 setStudents(studentData);
@@ -103,14 +103,15 @@ const StudentList = () => {
                 <table className="student-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Email</th>
                             <th>Name</th>
                             <th>Attendance Status</th>
+                            <th>Checkin Time</th>
                         </tr>
                     </thead>
                     <tbody>
                         {students && students.map((student) => {
-                            const status = student.attendanceStatus.toLowerCase();
+                            const status = student.status.toLowerCase();
                             const statusClass =
                                 status === "present"
                                     ? "status-present"
@@ -119,14 +120,15 @@ const StudentList = () => {
                                     : "status-late";
 
                             return (
-                                <tr key={student.id}>
-                                    <td>{student.id}</td>
-                                    <td>{student.name}</td>
+                                <tr key={student.user.email}>
+                                    <td>{student.user.email}</td>
+                                    <td>{student.user.name}</td>
                                     <td>
                                         <span className={`status-badge ${statusClass}`}>
-                                            {student.attendanceStatus}
+                                            {student.status}
                                         </span>
                                     </td>
+                                    <td>{student.checkInTime}</td>
                                 </tr>
                             );
                         })}

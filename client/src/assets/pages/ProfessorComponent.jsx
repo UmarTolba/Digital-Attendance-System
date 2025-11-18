@@ -23,6 +23,7 @@ function ProfessorComponent()
                     <SessionSlots></SessionSlots>
 
                     <div className="w-[68%] h-full border-solid border-[1px] border-[#5e97ff] rounded-[20px] mt-0 p-5">
+                        <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Student List</h2>
                         <StudentList cla></StudentList>
                     </div>
                 </div>

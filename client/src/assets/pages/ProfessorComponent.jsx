@@ -2,6 +2,7 @@ import React from "react";
 import SessionSlots from "../components/SessionSlots";
 import NewSideBar from "../components/NewSideBar";
 import StudentList from "../components/StudentList";
+import DataBarDaily from "../components/DdataBarDaily";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 function ProfessorComponent()
@@ -25,6 +26,7 @@ function ProfessorComponent()
                     <div className="w-[68%] h-full border-solid border-[1px] border-[#5e97ff] rounded-[20px] mt-0 p-5">
                         <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Student List</h2>
                         <StudentList cla></StudentList>
+                        <DataBarDaily></DataBarDaily>
                     </div>
                 </div>
             </div>

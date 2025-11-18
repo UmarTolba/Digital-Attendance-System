@@ -6,7 +6,7 @@ import SessionSlots from './assets/components/SessionSlots';
 import ProfessorComponent from './assets/pages/ProfessorComponent';
 import Sidebar from './assets/components/Sidebar';
 import Welcome from './assets/components/welcome';
-
+import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
 import Login from './assets/components/Login.jsx';
 import StudentList from './assets/components/StudentList';
 
@@ -22,7 +22,8 @@ function App() {
         <Route path="/Professor" element={<ProfessorComponent />} />
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />
-
+        DdataBarDaily
+        <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
 

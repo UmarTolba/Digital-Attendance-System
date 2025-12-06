@@ -10,6 +10,9 @@ import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
 import Login from './assets/pages/Login';
 import Generation from './assets/components/QrCodeGen';
 import StudentList from './assets/components/StudentList';
+import CreateSession from "./assets/components/sessions/CreateSession";
+import EditSession from "./assets/components/sessions/EditSession";
+import SessionList from "./assets/components/sessions/SessionList";
 function App() {
   
 
@@ -27,6 +30,11 @@ function App() {
         <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
+
+        
+        <Route path="/sessions" element={<SessionList />} />
+        <Route path="/sessions/CreateSession" element={<CreateSession />} />
+        <Route path="/sessions/EditSession/:id" element={<EditSession />} />
 
       </Routes>
     </>

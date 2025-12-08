@@ -10,6 +10,7 @@ import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
 import Login from './assets/pages/Login';
 import Generation from './assets/components/QrCodeGen';
 import StudentList from './assets/components/StudentList';
+import QrCodeRedirectionPage from './assets/pages/QrCodeRedirectionPage';
 function App() {
   
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />
         <Route path="/QR" element={<Generation />} />
-        
+        <Route path="/roll" element={<QrCodeRedirectionPage/>} />
         <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />

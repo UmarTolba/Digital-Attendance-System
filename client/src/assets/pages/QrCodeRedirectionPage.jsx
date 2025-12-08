@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import './redirectPage.css'
-import img1 from './images/img1.png'
+import '../../redirectPage.css'
+//import img1 from './images/img1.png'
 
-function App() {
+function QrCodeRedirectionPage() {
   const [done, setDone] = useState(false)
 
   const handleSubmit = check => {
@@ -24,7 +24,7 @@ function App() {
   const completionMessage = (
     <div style={{ textAlign: 'center' }}>
       <img
-        src={img1}
+        src="https://www.youtube.com/watch?v=Nt81gzIAt18"
         style={{
           width: '150px',
           height: '150px',
@@ -61,4 +61,4 @@ function App() {
   )
 }
 
-export default App
+export default QrCodeRedirectionPage

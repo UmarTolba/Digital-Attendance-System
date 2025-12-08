@@ -3,7 +3,7 @@ const express = require("express");
 const Router = express.Router();
 
 Router.get("/", getAllAttendance);
-Router.get("/session", getAttendanceBySession);
+Router.post("/session", getAttendanceBySession);
 Router.post("/", recordAttendance);
 
 module.exports = Router;

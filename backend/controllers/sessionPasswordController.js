@@ -7,17 +7,23 @@ const addSessionPassword = async (req, res)=>{
 }
 
 const findSessionByPassword = async (req, res)=>{
-    const sessionPassword = await SessionPassword.find({session:req.body.sessionID, 
-        password:req.body.password}).populate("session");
-    if(sessionPassword.length <= 0)
-    {
-        res.status(404).json({
-            message:"No session found with that password"
+    try {
+        const sessionPassword = await SessionPassword.find({session:req.body.sessionID, 
+            password:req.body.password}).populate("session");
+        if(sessionPassword.length <= 0)
+        {
+            res.status(404).json({
+                message:"No session found with that password"
+            });
+        }
+        else
+        {
+            res.status(200).json(sessionPassword);
+        }
+    } catch (error) {
+        res.status(500).json({
+            message:"Error while searching for session password"
         });
-    }
-    else
-    {
-        res.status(200).json(sessionPassword);
     }
 }
 

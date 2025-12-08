@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { Link } from "react-router";
+import axios from "axios";
 
 function Generation() {
   const [visible, setVisible] = useState(false);
@@ -9,6 +10,19 @@ function Generation() {
   
   const sessionID = new URLSearchParams(window.location.search).get("sessionID");
   const QR_CONTENT = `http://${localIP}:8080/roll?sessionID=${sessionID}`;
+  const [password, setPassword] = useState("00000");
+  
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const response = await axios.post("http://localhost:3000/api/sessionPassword/",{
+        sessionID:sessionID
+      });
+
+      setPassword(response.data.password);
+    }
+
+    fetchData();
+  },[]);
 
   return (
     <div className="flex-col" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
@@ -28,6 +42,7 @@ function Generation() {
         )}
       </div>
 
+          <h1 className="text-blue-800 text-3xl font-bold">{password}</h1>
       <Link 
         to="/Professor" 
         className="m-auto mt-8 rounded-lg border-2 border-b-blue-300 border-solid hover:text-blue-800 w-[20%] flex justify-center transition-all duration-100 hover:bg-white font-semibold text-xl text-white items-center p-2 bg-blue-800"

@@ -9,13 +9,14 @@ function QrCodeRedirectionPage() {
   const sessionID = new URLSearchParams(window.location.search).get("sessionID");
   let [message, setMessage] = useState("Attend Session");
   const [password, setPassword] = useState("test");
+  const IPAdress = window.location.hostname;
 
   const handleSubmit = async check => {
     check.preventDefault()
     if (check.target.checkValidity()) {
       // setDone(true)
       try {
-        let response = await axios.post('http://192.168.0.191:3000/api/user/login', {
+        let response = await axios.post('http://'+IPAdress+':3000/api/user/login', {
           email,
           password,
         });
@@ -25,13 +26,13 @@ function QrCodeRedirectionPage() {
         setMessage("Correct credentials, incorrect OTP");
         if(response.data)
         {
-          response = await axios.post('http://192.168.0.191:3000/api/sessionPassword/session', {
+          response = await axios.post('http://'+IPAdress+':3000/api/sessionPassword/session', {
             sessionID:sessionID,
             password:parseInt(OTP),
           });
 
 
-          response = await axios.post('http://192.168.0.191:3000/api/attendance', {
+          response = await axios.post('http://'+IPAdress+':3000/api/attendance', {
             user:userData._id,
             session:sessionID,
             status: "present"

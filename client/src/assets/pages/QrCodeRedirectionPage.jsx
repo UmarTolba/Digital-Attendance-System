@@ -4,7 +4,7 @@ import '../../redirectPage.css'
 import axios from 'axios'
 function QrCodeRedirectionPage() {
   const [done, setDone] = useState(false)
-  const [email, setEmail] = useState("shawkat@gmail.com");
+  const [email, setEmail] = useState("");
   const [OTP, setOTP] = useState(0);
   const sessionID = new URLSearchParams(window.location.search).get("sessionID");
   let [message, setMessage] = useState("Attend Session");

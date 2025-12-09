@@ -14,7 +14,7 @@ function DataBarDaily({studentNumber, present, lateNumber, excusedNumber, absent
         {
             return 0;
         }
-        return (present / registered_students) * 100;
+        return Math.round((present / registered_students) * 100);
         }
  return(
         <>
@@ -42,7 +42,7 @@ function DataBarDaily({studentNumber, present, lateNumber, excusedNumber, absent
             </div>
               <div className="databar-title">
                 Attendance %:
-                <div className="databar-numbers">{Attendance_percentage()}</div>
+                <div className="databar-numbers">{Attendance_percentage()}%</div>
             </div>
             
         </div>

@@ -14,9 +14,9 @@ function getLocalIP() {
     for (const iface of interfaces[name]) {
       // Look for IPv4, skip internal, and look for your specific subnet
       if (iface.family === 'IPv4' && !iface.internal) {
-        if (iface.address.startsWith('192.168.0.')) {
+        //if (iface.address.startsWith('192.168.0.')) {
           return iface.address;
-        }
+        //}
       }
     }
   }

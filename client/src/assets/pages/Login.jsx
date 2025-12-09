@@ -24,7 +24,15 @@ export default function Login() {
           login(userData);
           console.log('Login successful!', userData);
           setMessage("");
-          navigate("/Professor");
+          if(email.includes("@admin.com"))
+          {
+            
+            window.location.assign("https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1&pp=ygUJcmljayByb2xsoAcB");
+          }
+          else
+          {
+            navigate("/Professor");
+          }
           
         } catch (err) {
           const errorMessage = err.response?.data?.message || 'Login failed. Please try again.';

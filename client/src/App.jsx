@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       <Routes>
-
         {/* E3ML COPY-PASTE LEL LINE ELY T7T WE 7OT ESM EL COMPONENT BTA3K, WE 8AYAR EL PATH */}
         <Route path="/SessionSlots" element={<SessionSlots />} />
         <Route path="/Professor" element={<ProfessorComponent />} />

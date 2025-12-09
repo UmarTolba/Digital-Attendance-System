@@ -23,7 +23,10 @@ const login = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const user = await User.create(req.body);
+  const email = req.body.email;
+  const isProf = /^\d/.test(email.split('@')[0]);
+  
+  const user = await User.create({ ...req.body, isProf });
   res.status(201).json(user);
 };
 

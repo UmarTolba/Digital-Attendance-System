@@ -10,6 +10,13 @@ import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
 import Login from './assets/pages/Login';
 import Generation from './assets/components/QrCodeGen';
 import StudentList from './assets/components/StudentList';
+import AdminProtected from "./components/AdminProtected";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminUsers from "./pages/AdminUsers";
+import AdminSessions from "./pages/AdminSessions";
+import AdminAttendance from "./pages/AdminAttendance";
+import NotAuthorized from "./pages/NotAuthorized";
+
 function App() {
   
 
@@ -27,7 +34,48 @@ function App() {
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
 
+        <Route path="/not-authorized" element={<NotAuthorized />} />
+
+        {/* ADMIN ONLY ROUTES */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <AdminProtected>
+              <AdminDashboard />
+            </AdminProtected>
+          }
+        />
+
+        <Route
+          path="/admin/users"
+          element={
+            <AdminProtected>
+              <AdminUsers />
+            </AdminProtected>
+          }
+        />
+
+        <Route
+          path="/admin/sessions"
+          element={
+            <AdminProtected>
+              <AdminSessions />
+            </AdminProtected>
+          }
+        />
+
+        <Route
+          path="/admin/attendance"
+          element={
+            <AdminProtected>
+              <AdminAttendance />
+            </AdminProtected>
+          }
+/>
+
+
       </Routes>
+      
     </>
   );
 }

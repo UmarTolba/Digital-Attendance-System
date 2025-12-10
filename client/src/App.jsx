@@ -18,6 +18,8 @@ import AdminAttendance from "./assets/pages/AdminAttendance";
 import NotAuthorized from "./assets/pages/NotAuthorized";
 
 import QrCodeRedirectionPage from './assets/pages/QrCodeRedirectionPage';
+import CreateSession from "./assets/components/sessions/CreateSession";
+
 function App() {
   
 
@@ -35,6 +37,7 @@ function App() {
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
 
+<<<<<<< HEAD
         <Route path="/not-authorized" element={<NotAuthorized />} />
 
         {/* ADMIN ONLY ROUTES */}
@@ -73,6 +76,10 @@ function App() {
             </AdminProtected>
           }
 />
+=======
+        
+        <Route path="/sessions/CreateSession" element={<CreateSession />} />
+>>>>>>> Malek
 
 
       </Routes>

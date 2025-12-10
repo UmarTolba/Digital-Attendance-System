@@ -15,4 +15,10 @@ const addSession = async (req, res) =>{
     res.status(201).json(session);
 }
 
-module.exports = {getAllSessions, getSessionsByDate, addSession};
+
+
+module.exports = {
+    getAllSessions,
+    getSessionsByDate,
+    addSession,
+};

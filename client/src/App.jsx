@@ -10,6 +10,14 @@ import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
 import Login from './assets/pages/Login';
 import Generation from './assets/components/QrCodeGen';
 import StudentList from './assets/components/StudentList';
+import AdminProtected from "./assets/components/AdminProtected";
+import AdminDashboard from "./assets/pages/AdminDashboard";
+import AdminUsers from "./assets/pages/AdminUsers";
+import AdminSessions from "./assets/pages/AdminSessions";
+import AdminAttendance from "./assets/pages/AdminAttendance";
+import NotAuthorized from "./assets/pages/NotAuthorized";
+
+import QrCodeRedirectionPage from './assets/pages/QrCodeRedirectionPage';
 function App() {
   
 
@@ -22,12 +30,53 @@ function App() {
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />
         <Route path="/QR" element={<Generation />} />
-        
+        <Route path="/roll" element={<QrCodeRedirectionPage/>} />
         <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
 
+        <Route path="/not-authorized" element={<NotAuthorized />} />
+
+        {/* ADMIN ONLY ROUTES */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <AdminProtected>
+              <AdminDashboard />
+            </AdminProtected>
+          }
+        />
+
+        <Route
+          path="/admin/users"
+          element={
+            <AdminProtected>
+              <AdminUsers />
+            </AdminProtected>
+          }
+        />
+
+        <Route
+          path="/admin/sessions"
+          element={
+            <AdminProtected>
+              <AdminSessions />
+            </AdminProtected>
+          }
+        />
+
+        <Route
+          path="/admin/attendance"
+          element={
+            <AdminProtected>
+              <AdminAttendance />
+            </AdminProtected>
+          }
+/>
+
+
       </Routes>
+      
     </>
   );
 }

@@ -10,6 +10,7 @@ connectDB();
 const sessionRoutes = require("./routes/SessionRouter");
 const userRoutes = require("./routes/UserRouter");
 const attendanceRoutes = require("./routes/AttendanceRouter");
+const SessionPasswordRoutes = require("./routes/SessionPasswordRouter");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,10 +20,11 @@ app.use(cors());
 app.use("/api/user", userRoutes);
 app.use("/api/session", sessionRoutes);
 app.use("/api/attendance", attendanceRoutes);
+app.use("/api/sessionPassword", SessionPasswordRoutes);
 
 
 app.get('/', (req, res) => {
-  res.send('the Current available routes are: \n/user\n/session\n/attendance');
+  res.send('the Current available routes are: \n/user\n/session\n/attendance\n/sessionPassword');
 });
 
 app.listen(PORT, () => {

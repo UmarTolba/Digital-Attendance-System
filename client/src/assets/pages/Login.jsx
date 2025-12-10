@@ -24,7 +24,12 @@ export default function Login() {
           login(userData);
           console.log('Login successful!', userData);
           setMessage("");
-          navigate("/Professor");
+          if(email.includes("@admin")){
+            navigate("/admin/dashboard");
+          }else{
+
+            navigate("/Professor");
+          }
           
         } catch (err) {
           const errorMessage = err.response?.data?.message || 'Login failed. Please try again.';

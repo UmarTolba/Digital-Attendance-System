@@ -12,13 +12,20 @@ const getAllAttendance = async (req, res) =>{
 
 
 const recordAttendance = async (req, res) =>{
-    const attendance = await Attendance.create({
-        user: req.body.user,
-        session: req.body.session,
-        status: req.body.status,
-        checkInTime: new Date(),
-    });
-    res.json(attendance);
+    try {
+        
+        const attendance = await Attendance.create({
+            user: req.body.user,
+            session: req.body.session,
+            status: req.body.status,
+            checkInTime: new Date(),
+        });
+        res.status(200).json(attendance);
+    } catch (error) {
+        res.status(400).json({
+            message:"Student Recorded before"
+        });
+    }
 };
 
 module.exports = {getAllAttendance, getAttendanceBySession, recordAttendance};

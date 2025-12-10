@@ -8,9 +8,10 @@ import { useState, useEffect } from "react";
 
 
 
-function SessionSlots() {  // <-- Capitalized
+function SessionSlots({setSessionID, setSessionName}) {  // <-- Capitalized
   
   const [sessions, setSessions] = useState([]);
+
   useEffect(()=>{
     const fetchSessions = async () =>{
       try {
@@ -30,7 +31,7 @@ function SessionSlots() {  // <-- Capitalized
     <div className="session-slots">
       <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Lecture Schedule</h2>
       {sessions.map((session, index) => (
-        <div className="slot" key={index}>
+        <div onClick={()=>{setSessionID(session._id); setSessionName(session.name)}} className="slot" key={index}>
           <div className="slot-icon"><i class="fa-solid fa-calendar"></i></div>
           <div className="slot-info">
           

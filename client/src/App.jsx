@@ -17,6 +17,7 @@ import AdminSessions from "./pages/AdminSessions";
 import AdminAttendance from "./pages/AdminAttendance";
 import NotAuthorized from "./pages/NotAuthorized";
 
+import QrCodeRedirectionPage from './assets/pages/QrCodeRedirectionPage';
 function App() {
   
 
@@ -29,7 +30,7 @@ function App() {
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />
         <Route path="/QR" element={<Generation />} />
-        
+        <Route path="/roll" element={<QrCodeRedirectionPage/>} />
         <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />

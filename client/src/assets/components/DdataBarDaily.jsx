@@ -1,12 +1,12 @@
 import React from "react";
-function DataBarDaily({studentNumber, present, lateNumber, excusedNumber, absentNumber})
+function DataBarDaily({studentNumber, present, lateNumber, excusedNumber, absentNumber, sessionName})
 {
     var registered_students = studentNumber;
     var present = present;
     var late = lateNumber;
     var excused_absent = excusedNumber;
     var absent = absentNumber;
-    var course_name = "Intro to Computing";
+    var course_name = sessionName;
 
     function Attendance_percentage()
     {

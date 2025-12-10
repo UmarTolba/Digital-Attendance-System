@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, absentNumber}) => {
+import axios from 'axios';
+const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, absentNumber, sessionID}) => {
 
     const [students, setStudents] = useState(); 
     let presentTotal = 0;
@@ -14,17 +15,19 @@ const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, a
     useEffect(()=>{
         const fetchStudents = async ()=>{
             try {
-                const response = await fetch("http://localhost:3000/api/attendance");
-                const studentData = await response.json();
-                console.log(studentData);
+                console.log("Entered student list");
+                const response = await axios.post("http://localhost:3000/api/attendance/session", {
+                    sessionID:sessionID
+                });
+                const studentData = response.data;
                 setStudents(studentData);
             } catch (error) {
                 console.log(error);
             }
         }
 
-        fetchStudents();
-    }, []);
+        if (sessionID != 0) fetchStudents();
+    }, [sessionID]);
     
     if(students != null && students.length > 0)
     {

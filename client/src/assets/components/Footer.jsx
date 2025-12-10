@@ -21,17 +21,17 @@ function Footer() {
                 <div>
                   <h4 className="font-semibold mb-4">Company</h4>
                   <ul className="space-y-2 text-gray-400">
-                    <li><a href="eslsca.edu.eg" className="hover:text-white">About ESLSCA</a></li>
-                    <li><a href="" className="hover:text-white"></a></li>
-                    <li><a href="" className="hover:text-white">Careers</a></li>
+                    <li><a href="https://www.eslsca.edu.eg" className="hover:text-white">About ESLSCA</a></li>
+                    <li><a href="https://eslsca.edu.eg/undergraduate-admission/" className="hover:text-white">Admissions</a></li>
+                    <li><a href="https://eslsca.edu.eg/career-center/" className="hover:text-white">Careers</a></li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-4">Support</h4>
                   <ul className="space-y-2 text-gray-400">
-                    <li><a href="#" className="hover:text-white">Help Center</a></li>
-                    <li><a href="#" className="hover:text-white">Contact</a></li>
-                    <li><a href="#" className="hover:text-white">Status</a></li>
+                    <li><a href="https://eslsca.edu.eg/wellness-center/" className="hover:text-white">Wellness Center</a></li>
+                    <li><a href="https://eslsca.edu.eg/research-center/" className="hover:text-white">Research Center</a></li>
+                    <li><a href="https://eslsca.edu.eg/job-openings/" className="hover:text-white">Job Openings</a></li>
                   </ul>
                 </div>
               </div>

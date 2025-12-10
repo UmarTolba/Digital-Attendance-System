@@ -8,7 +8,7 @@ function Footer() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4">AttendEase</h3>
-                  <p className="text-gray-400">Modern digital attendance solutions for modern businesses.</p>
+                  <p className="text-gray-400">Modern digital attendance solutions for modern Universities.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-4">Socials</h4>

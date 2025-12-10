@@ -11,6 +11,9 @@ import Login from './assets/pages/Login';
 import Generation from './assets/components/QrCodeGen';
 import StudentList from './assets/components/StudentList';
 import ClassLIist from './assets/pages/ClassList.jsx';
+import AttendanceButton from './assets/components/SetAttendancePres.jsx'
+import AbsentButton from './assets/components/AbsentButton.jsx'
+import LateButton from './assets/components/LateButton.jsx'
 function App() {
   
 
@@ -29,6 +32,9 @@ function App() {
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
         <Route path="/ClassList" element={<ClassLIist />} />
+        <Route path="/SetAttendancePres" element={<AttendanceButton />} />
+        <Route path="/AbsentButton" element={<AbsentButton />} />
+        <Route path="/LateButton" element={<LateButton />} />
 
       </Routes>
     </>

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import StudentList from "../components/StudentList";
 import NewSideBar from "../components/NewSideBar";
 import DataBarDaily from "../components/DdataBarDaily";
+import AttendanceButton from "../components/SetAttendancePres";
+import AbsentButton from "../components/AbsentButton";
+import LateButton from "../components/LateButton";
 
 function ClassList() {
     // counters provided to DataBarDaily; StudentList will update them via setters
@@ -40,7 +43,11 @@ function ClassList() {
                                 absentNumber={setAbsent}
                             />
                         </div>
-                        <div className="h-28" aria-hidden="true" />
+                        <div>
+                            <AttendanceButton/>
+                            <LateButton/>
+                            <AbsentButton/>
+                        </div>
                     </div>
                 </div>
             </div>

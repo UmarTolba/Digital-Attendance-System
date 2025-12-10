@@ -13,9 +13,9 @@ function Footer() {
                 <div>
                   <h4 className="font-semibold mb-4">Socials</h4>
                   <ul className="space-y-2 text-gray-400">
+                    <li><a href="https://www.youtube.com/c/eslscaeg" className="hover:text-white">Youtube</a></li>
                     <li><a href="https://www.instagram.com/eslscaeg/" className="hover:text-white">Instagram</a></li>
                     <li><a href="https://www.linkedin.com/school/eslscauniversity" className="hover:text-white">LinkedIn</a></li>
-                    <li><a href="https://www.youtube.com/c/eslscaeg" className="hover:text-white">Youtube</a></li>
                   </ul>
                 </div>
                 <div>

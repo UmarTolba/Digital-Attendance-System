@@ -10,12 +10,12 @@ import DdataBarDaily from "./assets/components/DdataBarDaily.jsx";
 import Login from './assets/pages/Login';
 import Generation from './assets/components/QrCodeGen';
 import StudentList from './assets/components/StudentList';
-import AdminProtected from "./components/AdminProtected";
-import AdminDashboard from "./pages/AdminDashboard";
-import AdminUsers from "./pages/AdminUsers";
-import AdminSessions from "./pages/AdminSessions";
-import AdminAttendance from "./pages/AdminAttendance";
-import NotAuthorized from "./pages/NotAuthorized";
+import AdminProtected from "./assets/components/AdminProtected";
+import AdminDashboard from "./assets/pages/AdminDashboard";
+import AdminUsers from "./assets/pages/AdminUsers";
+import AdminSessions from "./assets/pages/AdminSessions";
+import AdminAttendance from "./assets/pages/AdminAttendance";
+import NotAuthorized from "./assets/pages/NotAuthorized";
 
 function App() {
   

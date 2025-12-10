@@ -20,6 +20,10 @@ import NotAuthorized from "./assets/pages/NotAuthorized";
 import QrCodeRedirectionPage from './assets/pages/QrCodeRedirectionPage';
 import CreateSession from "./assets/components/sessions/CreateSession";
 
+import ClassLIist from './assets/pages/ClassList.jsx';
+import AttendanceButton from './assets/components/SetAttendancePres.jsx'
+import AbsentButton from './assets/components/AbsentButton.jsx'
+import LateButton from './assets/components/LateButton.jsx'
 function App() {
   
 
@@ -36,6 +40,10 @@ function App() {
         <Route path="databar" element={<DdataBarDaily />} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/StudentList" element={<StudentList />} />
+        <Route path="/ClassList" element={<ClassLIist />} />
+        <Route path="/SetAttendancePres" element={<AttendanceButton />} />
+        <Route path="/AbsentButton" element={<AbsentButton />} />
+        <Route path="/LateButton" element={<LateButton />} />
 
 <<<<<<< HEAD
         <Route path="/not-authorized" element={<NotAuthorized />} />

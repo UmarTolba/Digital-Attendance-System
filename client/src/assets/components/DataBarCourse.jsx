@@ -34,26 +34,27 @@ function DataBarCourse()
             
         </div>
     <style jsx>{`
-           .databar {
+            .databar {
+           width:100%;
         display: flex;
         justify-content: space-around;
-        background-color: #cfcfcf;
+        background-color:  #0048ff76;
         padding: 20px;
-        border-radius: 8px;
-        border-color: black;
+        border-radius: 20px;
+        border-color: white;
         border-style: solid;
         border-width: 1px;
-        margin: 20px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        margin-top:20px;
     }
     .databar-title {
         font-size: 1.2em;
-        color: #333;
+        color: white;
         text-align: center;
+        font-weight: bold;
     }
     .databar-numbers {
         font-weight: bold;
-        color: #1513b8;
+        color: white;
         text-align: center;
     }
   `}</style>

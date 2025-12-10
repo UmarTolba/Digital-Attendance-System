@@ -7,28 +7,7 @@ import "./welcome.css";
 function Welcome() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-          <nav className="bg-white shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between h-16 items-center">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <h1 className="text-2xl font-bold text-indigo-600">AttendEase</h1>
-                  </div>
-                </div>
-                <div className="hidden md:block">
-                  <div className="ml-10 flex items-baseline space-x-4">
-                    <a href="#features" className="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                    <a href="#pricing" className="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
-                    <a href="#contact" className="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                  </div>
-                </div>
-                <Link to="/login" className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-300">
-                  Login
-                </Link>
-              </div>
-            </div>
-          </nav>
-    
+          <NavBar/>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -36,8 +15,7 @@ function Welcome() {
                 <span className="text-indigo-600"> Attendance</span> System
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Streamline your attendance tracking with our AI-powered digital solution. 
-                Save time, reduce errors, and get real-time insights.
+                Streamline your attendance tracking with our system designed for efficiency and ease of use.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 shadow-lg">
@@ -55,7 +33,7 @@ function Welcome() {
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Powerful Features</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  Everything you need to manage attendance efficiently
+                  Everything you need to manage attendance efficiently and securely
                 </p>
               </div>
               
@@ -100,7 +78,7 @@ function Welcome() {
           </div>
     
           {/* Footer */}
-          <Footer />
+          <Footer/>
         </div>
       );
 }

@@ -11,19 +11,19 @@ function Footer() {
                   <p className="text-gray-400">Modern digital attendance solutions for modern businesses.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-4">Product</h4>
+                  <h4 className="font-semibold mb-4">Socials</h4>
                   <ul className="space-y-2 text-gray-400">
-                    <li><a href="#" className="hover:text-white">Features</a></li>
-                    <li><a href="#" className="hover:text-white">Pricing</a></li>
-                    <li><a href="#" className="hover:text-white">API</a></li>
+                    <li><a href="https://www.instagram.com/eslscaeg/" className="hover:text-white">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/school/eslscauniversity" className="hover:text-white">LinkedIn</a></li>
+                    <li><a href="https://www.youtube.com/c/eslscaeg" className="hover:text-white">Youtube</a></li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-4">Company</h4>
                   <ul className="space-y-2 text-gray-400">
-                    <li><a href="#" className="hover:text-white">About</a></li>
-                    <li><a href="#" className="hover:text-white">Blog</a></li>
-                    <li><a href="#" className="hover:text-white">Careers</a></li>
+                    <li><a href="eslsca.edu.eg" className="hover:text-white">About ESLSCA</a></li>
+                    <li><a href="" className="hover:text-white"></a></li>
+                    <li><a href="" className="hover:text-white">Careers</a></li>
                   </ul>
                 </div>
                 <div>

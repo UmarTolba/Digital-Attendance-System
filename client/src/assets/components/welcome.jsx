@@ -18,12 +18,8 @@ function Welcome() {
                 Streamline your attendance tracking with our system designed for efficiency and ease of use.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 shadow-lg">
-                  Get Started
-                </button>
-                <button  className="border border-indigo-600 text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition duration-300">
-                  Learn More
-                </button>
+
+
               </div>
             </div>
           </div>
@@ -42,24 +38,24 @@ function Welcome() {
                   <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">📱</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Mobile Friendly</h3>
-                  <p className="text-gray-600">Mark attendance from any device, anywhere with our responsive design</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Packed with our QR Code attendance marking</h3>
+                  <p className="text-gray-600">Mark attendance using QR codes for quick and accurate tracking</p>
                 </div>
                 
                 <div className="text-center p-6">
                   <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">📊</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Real-time Reports</h3>
-                  <p className="text-gray-600">Generate instant reports and analytics for better decision making</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Real Time QR code generation</h3>
+                  <p className="text-gray-600">Generate instant QR codes for attendance marking in an instant</p>
                 </div>
                 
                 <div className="text-center p-6">
                   <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">🔒</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure & Reliable</h3>
-                  <p className="text-gray-600">Enterprise-grade security with 99.9% uptime guarantee</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure and Reliable QR Code System</h3>
+                  <p className="text-gray-600">Helps ensure secure and reliable attendance marking with our QR code system</p>
                 </div>
               </div>
             </div>
@@ -71,8 +67,8 @@ function Welcome() {
               <p className="text-indigo-100 mb-8 max-w-2xl mx-auto">
                 Join thousands of organizations that trust our digital attendance system
               </p>
-              <button className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
-                Get Started Today
+              <button href="/login" className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                Login
               </button>
             </div>
           </div>

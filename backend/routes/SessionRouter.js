@@ -4,17 +4,13 @@ const {
   getAllSessions,
   getSessionsByDate,
   addSession,
+  deleteSession
 } = require("../controllers/sessionController");
 
-// GET all sessions
 router.get("/", getAllSessions);
-
-// GET sessions by date
 router.get("/date", getSessionsByDate);
-
-
-// POST create new session
 router.post("/", addSession);
+router.delete("/delete", deleteSession);
 
 
 module.exports = router;

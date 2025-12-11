@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AdminSidebar from "../components/AdminSidebar";
-
+import axios from "axios";
 export default function AdminSessions() {
   const [sessions, setSessions] = useState([]);
   const [form, setForm] = useState({
@@ -36,8 +36,10 @@ export default function AdminSessions() {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3000/api/session/${id}`, {
-      method: "DELETE",
+    await axios.delete(`http://localhost:3000/api/session/delete`, {
+      data: {
+        id: id,
+      },
     });
     fetchSessions();
   };

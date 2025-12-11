@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 export default function Login() {
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState("hesham@gmail.com");
     let [message, setMessage] = useState("");
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState("test");
     const { user, login } = useAuth();
     const navigate = useNavigate();
     const handleSubmit = async (e) => {

@@ -6,7 +6,7 @@ export default function AdminProtected({ children }) {
 
   if (!user) return <Navigate to="/login" />;
 
-  if (user.role !== "admin") {
+  if (user.name !== "admin") {
     return <Navigate to="/not-authorized" />;
   }
 

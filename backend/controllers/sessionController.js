@@ -15,10 +15,15 @@ const addSession = async (req, res) =>{
     res.status(201).json(session);
 }
 
+const deleteSession = async (req, res) =>{
+    const session = await Session.deleteOne({_id:req.body.id});
+    res.status(200).json(session);
+}
 
 
 module.exports = {
     getAllSessions,
     getSessionsByDate,
     addSession,
+    deleteSession
 };

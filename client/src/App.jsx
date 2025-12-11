@@ -45,7 +45,6 @@ function App() {
         <Route path="/AbsentButton" element={<AbsentButton />} />
         <Route path="/LateButton" element={<LateButton />} />
 
-<<<<<<< HEAD
         <Route path="/not-authorized" element={<NotAuthorized />} />
 
         {/* ADMIN ONLY ROUTES */}
@@ -84,10 +83,8 @@ function App() {
             </AdminProtected>
           }
 />
-=======
         
         <Route path="/sessions/CreateSession" element={<CreateSession />} />
->>>>>>> Malek
 
 
       </Routes>

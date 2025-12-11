@@ -146,7 +146,21 @@ export default function AdminAttendance() {
                 <tr key={a._id} className="border-b">
                   <td className="p-3">{a.user?.name || "Unknown User"}</td>
                   <td className="p-3">{a.session?.name || "Unknown Session"}</td>
-                  <td className="p-3">{a.date || "N/A"}</td>
+                  <td className="p-3">
+  {
+    a.checkInTime 
+    ? 
+    new Date(a.checkInTime).toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+    : 
+    "N/A"
+  }
+</td>
 
                   <td className="p-3">
                     <select

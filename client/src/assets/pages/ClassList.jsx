@@ -13,6 +13,7 @@ function ClassList() {
     const [lateStudents, setLate] = useState(0);
     const [excusedStudents, setExcused] = useState(0);
     const [absentStudents, setAbsent] = useState(0);
+    const sessionID = new URLSearchParams(window.location.search).get('sessionID');
 
     return (
     <div className="flex h-screen">
@@ -41,6 +42,7 @@ function ClassList() {
                                 lateNumber={setLate}
                                 excusedNumber={setExcused}
                                 absentNumber={setAbsent}
+                                sessionID={sessionID}
                             />
                         </div>
                         <div>

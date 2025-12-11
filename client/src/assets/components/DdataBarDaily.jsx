@@ -14,7 +14,7 @@ function DataBarDaily({studentNumber, present, lateNumber, excusedNumber, absent
         {
             return 0;
         }
-        return (present / registered_students) * 100;
+        return Math.round((present / registered_students) * 100);
         }
  return(
         <>

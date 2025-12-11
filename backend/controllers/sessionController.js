@@ -20,10 +20,15 @@ const deleteSession = async (req, res) =>{
     res.status(200).json(session);
 }
 
+const updateSession = async (req, res) =>{
+    const session = await Session.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(session);
+}
 
 module.exports = {
     getAllSessions,
     getSessionsByDate,
     addSession,
-    deleteSession
+    deleteSession,
+    updateSession
 };

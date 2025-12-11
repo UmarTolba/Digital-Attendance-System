@@ -32,7 +32,7 @@ function SessionSlots({setSessionID, setSessionName}) {  // <-- Capitalized
       <h2 className="text-blue-800 font-bold text-xl mb-2 opacity-80 ">Lecture Schedule</h2>
       {sessions.map((session, index) => (
         <div onClick={()=>{setSessionID(session._id); setSessionName(session.name)}} className="slot" key={index}>
-          <div className="slot-icon"><i class="fa-solid fa-calendar"></i></div>
+          <div className="slot-icon"><i className="fa-solid fa-calendar"></i></div>
           <div className="slot-info">
           
             <div className="name">{session.name}</div>

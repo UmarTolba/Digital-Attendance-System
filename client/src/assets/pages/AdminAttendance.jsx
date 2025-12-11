@@ -25,23 +25,71 @@ export default function AdminAttendance() {
   }, []);
 
   const handleStatusChange = async (record, newStatus) => {
-    await fetch(`http://localhost:3000/api/attendance/${record._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status: newStatus }),
-    });
-    fetchAll();
+    try {
+      const url = `http://localhost:3000/api/attendance/${record._id}`;
+      const payload = { status: newStatus };
+      
+      console.log(`[STATUS CHANGE] URL: ${url}`);
+      console.log(`[STATUS CHANGE] Payload:`, payload);
+      console.log(`[STATUS CHANGE] Record ID: ${record._id}`);
+      
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      
+      console.log(`[STATUS CHANGE] Response status: ${response.status}`);
+      
+      const data = await response.json();
+      console.log(`[STATUS CHANGE] Response data:`, data);
+      
+      if (!response.ok) {
+        console.error("[STATUS CHANGE] Failed:", data);
+        alert(`Failed to update: ${data.message || response.statusText}`);
+        return;
+      }
+      
+      console.log("[STATUS CHANGE] Success! Refetching data...");
+      await fetchAll();
+    } catch (error) {
+      console.error("[STATUS CHANGE] Error:", error);
+      alert(`Error: ${error.message}`);
+    }
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete attendance record?")) return;
-    await fetch(`http://localhost:3000/api/attendance/${id}`, { method: "DELETE" });
-    fetchAll();
+    try {
+      const url = `http://localhost:3000/api/attendance/${id}`;
+      
+      console.log(`[DELETE] URL: ${url}`);
+      console.log(`[DELETE] Record ID: ${id}`);
+      
+      const response = await fetch(url, { method: "DELETE" });
+      
+      console.log(`[DELETE] Response status: ${response.status}`);
+      
+      const data = await response.json();
+      console.log(`[DELETE] Response data:`, data);
+      
+      if (!response.ok) {
+        console.error("[DELETE] Failed:", data);
+        alert(`Failed to delete: ${data.message || response.statusText}`);
+        return;
+      }
+      
+      console.log("[DELETE] Success! Refetching data...");
+      await fetchAll();
+    } catch (error) {
+      console.error("[DELETE] Error:", error);
+      alert(`Error: ${error.message}`);
+    }
   };
 
   const filtered = attendance.filter(a =>
-    (filterSession ? a.sessionId === filterSession : true) &&
-    (filterUser ? a.userId === filterUser : true)
+    (filterSession ? a.session?._id === filterSession : true) &&
+    (filterUser ? a.user?._id === filterUser : true)
   );
 
   return (
@@ -96,9 +144,9 @@ export default function AdminAttendance() {
             <tbody>
               {filtered.map((a) => (
                 <tr key={a._id} className="border-b">
-                  <td className="p-3">{users.find((u) => u._id === a.user._id)?.name}</td>
-                  <td className="p-3">{sessions.find((s) => s._id === a.session._id)?.name}</td>
-                  <td className="p-3">{a.date}</td>
+                  <td className="p-3">{a.user?.name || "Unknown User"}</td>
+                  <td className="p-3">{a.session?.name || "Unknown Session"}</td>
+                  <td className="p-3">{a.date || "N/A"}</td>
 
                   <td className="p-3">
                     <select
@@ -110,6 +158,7 @@ export default function AdminAttendance() {
                       <option className="text-green-500" value="present">Present</option>
                       <option className="text-green-500" value="absent">Absent</option>
                       <option className="text-green-500" value="late">Late</option>
+                      <option className="text-green-500" value="excused">Excused</option>
                     </select>
                   </td>
 

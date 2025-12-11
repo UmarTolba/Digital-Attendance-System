@@ -28,4 +28,44 @@ const recordAttendance = async (req, res) =>{
     }
 };
 
-module.exports = {getAllAttendance, getAttendanceBySession, recordAttendance};
+const updateAttendance = async (req, res) =>{
+    try {
+        console.log("Update request received for ID:", req.params.id);
+        console.log("Request body:", req.body);
+        
+        const attendance = await Attendance.findByIdAndUpdate(
+            req.params.id, 
+            req.body, 
+            { new: true }
+        ).populate("user").populate("session");
+        
+        if (!attendance) {
+            console.log("Attendance record not found");
+            return res.status(404).json({ message: "Attendance record not found" });
+        }
+        
+        console.log("Updated attendance:", attendance);
+        res.json(attendance);
+    } catch (error) {
+        console.error("Update error:", error);
+        res.status(400).json({ message: error.message });
+    }
+};
+
+const deleteAttendance = async (req, res) =>{
+    try {
+        console.log("Delete request received for ID:", req.params.id);
+        const result = await Attendance.findByIdAndDelete(req.params.id);
+        if (!result) {
+            console.log("Attendance record not found");
+            return res.status(404).json({ message: "Attendance record not found" });
+        }
+        console.log("Deleted record:", result);
+        res.json({ message: "Attendance record deleted", deletedRecord: result });
+    } catch (error) {
+        console.error("Delete error:", error);
+        res.status(400).json({ message: error.message });
+    }
+};
+
+module.exports = {getAllAttendance, getAttendanceBySession, recordAttendance, updateAttendance, deleteAttendance};

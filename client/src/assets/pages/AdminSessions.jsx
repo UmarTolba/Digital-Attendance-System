@@ -105,8 +105,8 @@ export default function AdminSessions() {
             onChange={(e) => setForm({ ...form, period: e.target.value })}
           />
 
-          <select
-            className="border p-2 rounded"
+          <select 
+            className="border p-2 rounded bg-white"
             value={form.semester}
             onChange={(e) => setForm({ ...form, semester: e.target.value })}
           >

@@ -19,7 +19,7 @@ import NotAuthorized from "./assets/pages/NotAuthorized";
 
 import QrCodeRedirectionPage from './assets/pages/QrCodeRedirectionPage';
 import CreateSession from "./assets/components/sessions/CreateSession";
-
+import SessionViewer from './assets/pages/SessionViewer';
 import ClassLIist from './assets/pages/ClassList.jsx';
 import AttendanceButton from './assets/components/SetAttendancePres.jsx'
 import AbsentButton from './assets/components/AbsentButton.jsx'
@@ -31,7 +31,7 @@ function App() {
     <>
       <Routes>
         {/* E3ML COPY-PASTE LEL LINE ELY T7T WE 7OT ESM EL COMPONENT BTA3K, WE 8AYAR EL PATH */}
-        <Route path="/SessionSlots" element={<SessionSlots />} />
+        <Route path="/SessionSlots" element={<SessionViewer />} />
         <Route path="/Professor" element={<ProfessorComponent />} />
         <Route path="/SideBar" element={<Sidebar />} />
         <Route path="" element={<Welcome />} />

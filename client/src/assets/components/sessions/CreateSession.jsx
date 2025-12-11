@@ -37,8 +37,10 @@ export default function CreateSession() {
   };
 
   return (
-    <>
-    <style>{`
+   
+
+    <form className="session-form" onSubmit={handleSubmit}>
+       <style>{`
   .session-title {
     
     text-align: center;
@@ -53,8 +55,7 @@ export default function CreateSession() {
   .session-form {
     display: flex;
     flex-direction: column;
-    width: 350px;
-    margin: 20px auto 40px auto;
+    width: 50%;
     padding: 20px;
     background: #ffffff;
     border-radius: 12px;
@@ -97,9 +98,7 @@ export default function CreateSession() {
     background: #93a0aeff;
   }
 `}</style>
-
-    <h1 className="session-title">Create Session</h1>
-    <form className="session-form" onSubmit={handleSubmit}>
+      <h1>Create Session</h1>
       <input  name="name" placeholder="Name" onChange={handleChange} />
 
       <input name="day" placeholder="Day (number)" onChange={handleChange} />
@@ -115,6 +114,6 @@ export default function CreateSession() {
 
       <button type="submit">Create Session</button>
     </form>
-    </>
   );
 }
+

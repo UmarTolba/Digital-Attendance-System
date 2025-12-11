@@ -21,6 +21,21 @@ const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, a
                 });
                 const studentData = response.data;
                 setStudents(studentData);
+                
+                // Update parent component counts
+                if (studentData && studentData.length > 0) {
+                    const registeredStudents = studentData.length;
+                    const presentStudents = studentData.filter(student => student.status == "present");
+                    const lateStudents = studentData.filter(student => student.status == "late");
+                    const excusedStudents = studentData.filter(student => student.status == "excused");
+                    const absentStudents = studentData.filter(student => student.status == "absent");
+                    
+                    setNumber(registeredStudents);
+                    present(presentStudents.length);
+                    late(lateStudents.length);
+                    excused(excusedStudents.length);
+                    absent(absentStudents.length);
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -29,19 +44,6 @@ const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, a
         if (sessionID != 0) fetchStudents();
     }, [sessionID]);
     
-    if(students != null && students.length > 0)
-    {
-        const registeredStudents = students.length;
-        const presentStudents = students.filter(student => student.status == "present");
-        const lateStudents = students.filter(student => student.status == "late");
-        const excusedStudents = students.filter(student => student.status == "excused");
-        const absentStudents = students.filter(student => student.status == "absent");
-        setNumber(registeredStudents);
-        present(presentStudents.length);
-        late(lateStudents.length);
-        excused(excusedStudents.length);
-        absent(absentStudents.length);
-    }
     return (
         <>
             <style>{`
@@ -130,6 +132,8 @@ const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, a
                     </thead>
                     <tbody>
                         {students && students.map((student) => {
+                            if (!student.user || !student.session) return null;
+                            
                             const status = student.status.toLowerCase();
                             const statusClass =
                                 status === "present"
@@ -139,9 +143,9 @@ const StudentList = ({studentNumber, presentNumber, lateNumber, excusedNumber, a
                                     : "status-late";
 
                             return (
-                                <tr key={student.user.email}>
-                                    <td>{student.user.email}</td>
-                                    <td>{student.user.name}</td>
+                                <tr key={student.user?.email || student._id}>
+                                    <td>{student.user?.email || "Unknown"}</td>
+                                    <td>{student.user?.name || "Unknown"}</td>
                                     <td>
                                         <span className={`status-badge ${statusClass}`}>
                                             {student.status}

@@ -4,12 +4,14 @@ const {
   getAllSessions,
   getSessionsByDate,
   addSession,
-  deleteSession
+  deleteSession,
+  updateSession
 } = require("../controllers/sessionController");
 
 router.get("/", getAllSessions);
 router.get("/date", getSessionsByDate);
 router.post("/", addSession);
+router.put("/:id", updateSession);
 router.delete("/delete", deleteSession);
 
 

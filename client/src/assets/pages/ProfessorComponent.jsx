@@ -26,7 +26,7 @@ function ProfessorComponent()
     return(
         <div className="flex flex-column h-full">
             
-            <NewSideBar sessionID={sessionID}></NewSideBar>
+            <NewSideBar sessionID={sessionID} user={user}></NewSideBar>
             <div className="w-full h-full p-5">
                 <h1 className="text-blue-800 font-bold text-4xl">Welcome Dr.{user.name.slice(0, 1).toUpperCase()+user.name.slice(1, user.name.length)}</h1>
                 <div className="flex flex-row justify-center h-[90%] items-center mt-9">

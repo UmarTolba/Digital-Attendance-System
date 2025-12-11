@@ -13,12 +13,17 @@ import axios from 'axios';
 
 function Profile(){
   
-    const [userData, setUserData] = useState();
+    const [userData, setUserData] = useState({
+        name:"Hesham",
+        email:"hesham@gmail.com",
+        password:"test",
+        isProf:true
+    });
     const userID = new URLSearchParams(window.location.search).get('user');
     useEffect(()=>{
         const fetchUser = async ()=>{
             const response = await axios.post("http://localhost:3000/api/user/id", {
-                "_id":userID
+                id:userID
             });
     
             console.log(response.data); 

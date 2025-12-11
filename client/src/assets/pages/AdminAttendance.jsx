@@ -15,6 +15,7 @@ export default function AdminAttendance() {
     const usr = await (await fetch("http://localhost:3000/api/user")).json();
 
     setAttendance(att);
+    console.log(ses);
     setSessions(ses);
     setUsers(usr);
   };
@@ -51,22 +52,22 @@ export default function AdminAttendance() {
         <h2 className="text-3xl font-bold text-blue-800 mb-4">Manage Attendance</h2>
 
         {/* FILTERS */}
-        <div className="bg-white shadow p-4 rounded mb-6 flex gap-4">
+        <div className="bg-white shadow p-4 rounded mb-6 flex gap-4 text-white">
           <select
-            className="border p-2 rounded"
+            className="border p-2 rounded text-white"
             value={filterSession}
             onChange={(e) => setFilterSession(e.target.value)}
           >
             <option value="">All Sessions</option>
             {sessions.map((s) => (
               <option key={s._id} value={s._id}>
-                {s.title}
+                {s.name}
               </option>
             ))}
           </select>
 
           <select
-            className="border p-2 rounded"
+            className="border p-2 rounded text-white"
             value={filterUser}
             onChange={(e) => setFilterUser(e.target.value)}
           >
@@ -95,19 +96,20 @@ export default function AdminAttendance() {
             <tbody>
               {filtered.map((a) => (
                 <tr key={a._id} className="border-b">
-                  <td className="p-3">{users.find((u) => u._id === a.userId)?.name}</td>
-                  <td className="p-3">{sessions.find((s) => s._id === a.sessionId)?.title}</td>
+                  <td className="p-3">{users.find((u) => u._id === a.user._id)?.name}</td>
+                  <td className="p-3">{sessions.find((s) => s._id === a.session._id)?.name}</td>
                   <td className="p-3">{a.date}</td>
 
                   <td className="p-3">
                     <select
-                      className="border p-1 rounded"
+                      className="border p-1 rounded text-white"
+                      
                       value={a.status}
                       onChange={(e) => handleStatusChange(a, e.target.value)}
                     >
-                      <option value="present">Present</option>
-                      <option value="absent">Absent</option>
-                      <option value="late">Late</option>
+                      <option className="text-green-500" value="present">Present</option>
+                      <option className="text-green-500" value="absent">Absent</option>
+                      <option className="text-green-500" value="late">Late</option>
                     </select>
                   </td>
 

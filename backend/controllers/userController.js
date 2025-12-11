@@ -24,9 +24,9 @@ const login = async (req, res) => {
 
 const createUser = async (req, res) => {
   const email = req.body.email;
-  const isProf = /^\d/.test(email.split('@')[0]);
-  
-  const user = await User.create({ ...req.body, isProf });
+  //const isProf = /^\d/.test(email.split('@')[0]);
+  console.log(req.body);
+  const user = await User.create({ ...req.body, isProf:req.body.isProf });
   res.status(201).json(user);
 };
 

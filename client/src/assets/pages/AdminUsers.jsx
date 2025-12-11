@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import AdminSidebar from "../components/AdminSidebar";
-
+import axios from "axios";
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ name: "", email: "", password: "", isProf:false});
 
   // FOR EDIT
   const [editMode, setEditMode] = useState(false);
@@ -23,13 +23,14 @@ export default function AdminUsers() {
   // CREATE USER
   const handleAddUser = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/api/user", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    await axios.post("http://localhost:3000/api/user", {
+      name:form.name,
+      email:form.email,
+      password:form.password,
+      isprof:false
+  });
 
-    setForm({ name: "", email: "", password: "" });
+    //setForm({ name: "", email: "", password: "" });
     fetchUsers();
   };
 
@@ -83,7 +84,7 @@ export default function AdminUsers() {
               <input
                 type="text"
                 placeholder="Name"
-                className="border p-2 rounded w-1/4"
+                className="border p-2 rounded w-full"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
@@ -91,7 +92,7 @@ export default function AdminUsers() {
               <input
                 type="email"
                 placeholder="Email"
-                className="border p-2 rounded w-1/4"
+                className="border p-2 rounded w-full"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
@@ -128,14 +129,14 @@ export default function AdminUsers() {
               />
               <input
                 type="email"
-                className="border p-2 rounded w-1/4"
+                className="border p-2 rounded w-full"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
               />
               <input
                 type="password"
-                className="border p-2 rounded w-1/4"
+                className="border p-2 rounded w-full"
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 required
